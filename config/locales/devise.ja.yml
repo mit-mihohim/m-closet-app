@@ -1,4 +1,7 @@
 ja:
+  errors:
+    messages:
+      not_saved: "登録は完了していません"
   activerecord:
     attributes:
       user:
@@ -11,6 +14,9 @@ ja:
     models:
       user: "ユーザ"
   devise:
+    failure:
+      user:
+        already_authenticated: "既に登録済です"
     confirmations:
       new:
         resend_confirmation_instructions: "アカウント確認メール再送"
@@ -40,6 +46,9 @@ ja:
         forgot_your_password: "パスワードを忘れましたか?"
         send_me_reset_password_instructions: "パスワードの再設定方法を送信する"
     registrations:
+      user:
+        destroyed: "退会が完了しました"
+        signed_up: "登録が完了しました" 
       edit:
         are_you_sure: "本当に良いですか?"
         cancel_my_account: "アカウント削除"

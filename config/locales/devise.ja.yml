@@ -6,7 +6,7 @@ ja:
         email: "メールアドレス"
         password: "パスワード"
         password_confirmation: "確認用パスワード"
-        remember_me: "ログインを記憶"
+        remember_me: "ログイン情報を保存"
     models:
       user: "ユーザ"
   devise:

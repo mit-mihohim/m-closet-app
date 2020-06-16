@@ -23,6 +23,8 @@ ruby 2.5.1
 |nickname|string|null: false|
 |email|string|null: false|
 |password|string|null: false, pass.match(/[a-z\d]{8, }/i)|
+### gem指定
+devise
 ### Association
 - has_many :items, dependent: :destroy
 - has_many :stylings, dependent: :destroy
@@ -32,7 +34,7 @@ ruby 2.5.1
 |------|----|-------|
 |name|string|null: false|
 ### gem指定
-gem ancestry
+ancestry
 ### Association
 - has_many :items
 - has_ancestry

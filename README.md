@@ -14,10 +14,13 @@ Rails 6.0.3.1
 ruby 2.5.1
 
 # DB設計
+## ER図
+![m-closet-app ER図](https://user-images.githubusercontent.com/64117340/84738119-4435c400-afe4-11ea-8707-989cc5483479.png)
+
 ## usersテーブル
 |Column|Type|Option|
 |------|----|------|
-|name|string|null: false|
+|nickname|string|null: false|
 |email|string|null: false|
 |password|string|null: false, pass.match(/[a-z\d]{8, }/i)|
 ### Association
@@ -42,7 +45,7 @@ gem ancestry
 |color|integer|null: false, default: 0|
 |text|string||
 |category_id|references|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - has_many :stylings, through: :item_stylings
@@ -62,6 +65,7 @@ gem ancestry
 |------|----|------|
 |title|string|null: false|
 |season|integer|null: false, default 0|
+|scene|string||
 |text|string||
 |user_id|references|null: false, foreign_key:true|
 ### Association

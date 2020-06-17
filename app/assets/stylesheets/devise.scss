@@ -31,6 +31,9 @@
       }
       .field {
         padding-bottom: 10px;
+        label {
+          line-height: 30px;
+        }
         input {
           width: 100%;
           max-width: 380px;
@@ -42,14 +45,16 @@
       .actions {
         .button {
           height: 38px;
-          width: 80px;
-          background-color: #5fb2ff;
-          color: #ffffff;
-          border: 0;
+          padding: 0 10px;
+          border: 1px solid;
+          border-color: #414141;
+          color: #414141;
+          background-color: #ffffff;
           border-radius: 5px;
           cursor: pointer;
           &:hover {
-            box-shadow: 0 0 0 2px #b3daff;
+            background-color: #414141;
+            color: #ffffff;
           }
         }
       }

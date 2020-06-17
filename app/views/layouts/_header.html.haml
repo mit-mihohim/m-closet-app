@@ -1,0 +1,27 @@
+.header
+  .top-header
+    = link_to root_path, class: "top-header__brand" do
+      %h1 m-closet
+    .top-header__bottom
+  .bottom-header
+    .nav-bar
+      %ul.nav-bar__items
+        %li.items__all
+          = link_to "ALL Items", "#", class: "link-btn"
+        %li.items__category
+          = link_to "Category", "#", class: "link-btn"
+      .nav-bar__search-box
+        = form_with(url: "#", local: true, method: :get, class: "") do |f|
+          = f.text_field :keyword, placeholder: "アイテムを探す", class: "input-box"
+          = button_tag type: "submit", class: "button" do
+            Search
+      %ul.nav-bar__user-menu
+        - if user_signed_in?
+          %li.account
+            = link_to "username", "#", class: "link-btn"
+          %li.logout
+            = link_to "Logout", "#", class: "link-btn"
+        - else
+          %li.signup
+            = link_to "新規会員登録", new_user_registration_path, class: "link-btn"
+  .bottom-header__bottom

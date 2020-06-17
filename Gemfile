@@ -57,3 +57,4 @@ gem 'devise'
 gem 'devise-i18n-views'
 gem "rails-i18n"
 gem "ancestry"
+gem "aws-sdk-s3", require: false

@@ -1,0 +1,37 @@
+.header {
+  width: 100vw;
+  height: 100%;
+  align-items: center;
+  top: 0;
+  margin-bottom: 20px;
+  .top-header{
+    &__brand{
+      margin: 15px;
+      font-size: 40px;
+      font-weight: normal;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+    }
+    &__bottom{
+      border-bottom: 4px solid;
+      border-radius: 30px;
+      margin: 0 25px;
+    }
+  }
+  .bottom-header {
+    .nav-bar {
+      padding: 5px 40px;
+      display: flex;
+      justify-content: space-between;
+      ul {
+        display: flex;
+      }
+    }
+    &__bottom {
+      border-bottom: 4px solid;
+      border-radius: 30px;
+      margin: 0 25px;
+    }
+  }
+}

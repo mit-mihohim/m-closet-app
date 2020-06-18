@@ -1,0 +1,27 @@
+= form_with model: @item, local: true do |f|
+  - if @item.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@item.errors.count, "error")} prohibited this item from being saved:"
+      %ul
+        - @item.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    .field__image
+      = f.label :image
+      = f.file_field :image
+    .field__select
+      = f.label :season
+      = f.select :season, Item.seasons.keys.map{ |k| [k,k]}, {include_blank: "選択してください"}
+    .field__select
+      = f.label :color
+      = f.select :color, Item.colors.keys.map{ |k| [k, k]}, {include_blank: "選択してください"}
+    .field__text
+      = f.label :text
+      = f.text_field :text
+    .field__category
+      = f.label :category
+      = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: "選択して下さい"}, {class: "select-box", id: "category_select"}
+
+  .actions
+    = f.submit 'Save'

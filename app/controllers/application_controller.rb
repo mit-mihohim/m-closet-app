@@ -7,10 +7,4 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname])
   end
-
-  private
-
-  def get_parents_categories
-    @parents = Category.where(ancestry: nil)
-  end
 end

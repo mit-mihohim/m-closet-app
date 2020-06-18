@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2020_06_17_125813) do
     t.string "image", null: false
     t.integer "season", default: 0, null: false
     t.integer "color", default: 0, null: false
+    t.string "text"
     t.bigint "category_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_17_125813) do
+ActiveRecord::Schema.define(version: 2020_06_18_142857) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 2020_06_17_125813) do
   end
 
   create_table "items", force: :cascade do |t|
-    t.string "image", null: false
     t.integer "season", default: 0, null: false
     t.integer "color", default: 0, null: false
     t.string "text"

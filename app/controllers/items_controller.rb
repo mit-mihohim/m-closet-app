@@ -1,9 +1,9 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-  before_action :return_to_root_path, except: :index, unless: :user_signed_in?
+  before_action :return_to_root_path, except: :top, unless: :user_signed_in?
 
   def index
-    @items = Item.all
+    @items = current_user.items
   end
 
   def show
@@ -50,17 +50,21 @@ class ItemsController < ApplicationController
     end
   end
 
+  def top
+
+  end
+
   private
 
   def return_to_root_path
     redirect_to root_path, alert: "ログインが必要です"
   end
 
-    def set_item
-      @item = Item.find(params[:id])
-    end
+  def set_item
+    @item = Item.find(params[:id])
+  end
 
-    def item_params
-      params.require(:item).permit(:image, :season, :color, :text, :category_id).merge(user_id: current_user.id)
-    end
+  def item_params
+    params.require(:item).permit(:image, :season, :color, :text, :category_id).merge(user_id: current_user.id)
+  end
 end

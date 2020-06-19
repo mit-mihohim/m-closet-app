@@ -1,0 +1,19 @@
+.wrapper 
+  .item-show
+    %div
+      = image_tag @item.image.variant(combine_options:{resize: "300x300", crop: "300x300", gravity: :center}).processed
+    %div
+      = @item.category.name
+      -# タグ付けに変更(検索登録しやすく)
+    %div
+      = @item.season
+      -# ボタン選択に変更する
+    %div
+      = @item.color
+      -# カラー表示方法調べる
+    %div
+      = @item.text
+
+  = link_to 'Edit', edit_item_path(@item)
+  \|
+  = link_to 'Back', items_path

@@ -7,7 +7,7 @@
     .nav-bar
       %ul.nav-bar__items
         %li.items__all
-          = link_to "ALL Items", "#", class: "link-btn"
+          = link_to "ALL Items", items_path, class: "link-btn"
         %li.items__category
           = link_to "Category", "#", class: "link-btn"
       .nav-bar__search-box
@@ -18,7 +18,7 @@
       %ul.nav-bar__user-menu
         - if user_signed_in?
           %li.account
-            = link_to "username", "#", class: "link-btn"
+            = link_to current_user.nickname, "#", class: "link-btn"
           %li.logout
             = link_to "Logout", destroy_user_session_path, method: :delete, class: "link-btn"
         - else

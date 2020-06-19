@@ -1,10 +1,42 @@
 .wrapper {
   text-align: center;
+  width: 100vw;
+  h1 {
+    line-height: 70px;
+  }
 
   // item-showページ
   .item-show {
     width: 50%;
     margin: 0 auto;
     display: block;
+  }
+
+  // item-indexページ
+  .item-index {
+    width: 75%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    display: flex;
+    .item {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      margin: 7px;
+      .link-btn {
+        padding: 5px;
+        background-color: #ffffff;
+        font-size: 20px;
+        text-decoration: none;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        cursor: pointer;
+        &:hover {
+          background-color: #414141;
+          color: #ffffff;
+        }
+      }
+    }
   }
 }

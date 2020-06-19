@@ -6,4 +6,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          password_length: 8..50
+  
+  has_many :items, dependent: :destroy
 end

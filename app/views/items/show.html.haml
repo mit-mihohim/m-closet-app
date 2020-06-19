@@ -14,6 +14,9 @@
     %div
       = @item.text
 
-  = link_to 'Edit', edit_item_path(@item)
-  \|
+  - if user_signed_in? && current_user.id == @item.user_id
+    = link_to 'Edit', edit_item_path(@item)
+    \|
+    = link_to 'Destroy', @item, method: :delete, data: { confirm: '本当に削除していいですか?' }
+    \|
   = link_to 'Back', items_path

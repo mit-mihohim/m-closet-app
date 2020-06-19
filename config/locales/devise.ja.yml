@@ -61,6 +61,9 @@ ja:
       new:
         sign_up: "アカウント登録"
     sessions:
+      user:
+        signed_out: "ログアウトしました"
+        signed_in: "ログインしました"
       new:
         sign_in: "ログイン"
     shared:

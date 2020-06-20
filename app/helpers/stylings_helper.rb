@@ -1,0 +1,2 @@
+module StylingsHelper
+end

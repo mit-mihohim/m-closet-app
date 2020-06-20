@@ -1,6 +1,6 @@
 class StylingsController < ApplicationController
   def index
-    
+
   end
 
   def show
@@ -8,7 +8,7 @@ class StylingsController < ApplicationController
   end
 
   def new
-    
+    @styling = Styling.new
   end
 
   def create

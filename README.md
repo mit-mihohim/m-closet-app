@@ -67,7 +67,7 @@ ancestry
 |------|----|------|
 |title|string|null: false|
 |season|integer|null: false, default 0|
-|scene|string||
+|scene|string|null: false|
 |text|string||
 |user_id|references|null: false, foreign_key:true|
 ### Association

@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root 'items#top'
 
   resources :items
-
+  resources :stylings
+  
   resources :categories, only: :index do
     collection do
       get "children_categories"

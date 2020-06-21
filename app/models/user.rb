@@ -8,4 +8,5 @@ class User < ApplicationRecord
          password_length: 8..50
   
   has_many :items, dependent: :destroy
+  has_many :stylings, dependent: :destroy
 end

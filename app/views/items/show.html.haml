@@ -1,7 +1,7 @@
 .wrapper 
   .item-show
     %div
-      = image_tag @item.image.variant(combine_options:{resize: "300x300", crop: "300x300", gravity: :center}).processed
+    = link_to image_tag(@item.show_image), items_path
     %div
       = @item.category.name
       -# タグ付けに変更(検索登録しやすく)

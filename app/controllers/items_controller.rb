@@ -1,9 +1,9 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :return_to_root_path, except: :top, unless: :user_signed_in?
+  before_action :items_index, only: [:index]
 
   def index
-    @items = current_user.items
   end
 
   def show

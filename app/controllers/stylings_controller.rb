@@ -12,7 +12,12 @@ class StylingsController < ApplicationController
   end
 
   def create
-    
+    @styling = Styling.new(styling_params)
+    if @styling.save
+      redirect_to @styling, notice: "スタイリングが登録されました"
+    else
+      render :new
+    end
   end
 
   def edit
@@ -25,5 +30,11 @@ class StylingsController < ApplicationController
 
   def destroy
     
+  end
+
+  private
+
+  def styling_params
+    params.require(:styling).permit(:title, :season, :scene, :text, item_ids: []).merge(user_id: current_user.id)
   end
 end

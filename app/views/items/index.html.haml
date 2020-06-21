@@ -4,4 +4,4 @@
     - @items.each do |item|
       .item
         = link_to 'Show', item, class: "link-btn"
-        = image_tag item.image.variant(combine_options:{resize: "200x200", crop: "200x200", gravity: :center}).processed
+        = image_tag item.thumbnail

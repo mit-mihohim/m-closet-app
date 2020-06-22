@@ -3,5 +3,5 @@ class Styling < ApplicationRecord
   has_many :item_stylings
   has_many :items, through: :item_stylings
 
-  validates :title, :season, :scene, presence: true
+  validates :title, presence: true
 end

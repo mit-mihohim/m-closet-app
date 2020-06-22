@@ -1,0 +1,20 @@
+.wrapper 
+  .styling-show
+    %div
+      - @styling.items.each do |item|
+        = image_tag item.thumbnail
+    %div
+      = @styling.title
+    %div
+      = @styling.season
+    %div
+      = @styling.scene
+    %div
+      = @styling.text
+
+  - if user_signed_in? && current_user.id == @styling.user_id
+    = link_to 'Edit', edit_styling_path(@styling)
+    \|
+    = link_to 'Destroy', @styling, method: :delete, data: { confirm: '本当に削除していいですか?' }
+    \|
+  = link_to 'Back', stylings_path

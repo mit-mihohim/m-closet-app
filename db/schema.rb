@@ -36,22 +36,6 @@ ActiveRecord::Schema.define(version: 2020_06_22_090615) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "categories", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "ancestry"
-    t.index ["ancestry"], name: "index_categories_on_ancestry"
-    t.index ["name"], name: "index_categories_on_name"
-  end
-
-  create_table "item_stylings", force: :cascade do |t|
-    t.bigint "item_id", null: false
-    t.bigint "styling_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["item_id"], name: "index_item_stylings_on_item_id"
-    t.index ["styling_id"], name: "index_item_stylings_on_styling_id"
-  end
-
   create_table "item_tags", force: :cascade do |t|
     t.bigint "item_id", null: false
     t.bigint "tag_id", null: false
@@ -65,23 +49,10 @@ ActiveRecord::Schema.define(version: 2020_06_22_090615) do
     t.integer "season", default: 0, null: false
     t.integer "color", default: 0, null: false
     t.string "text"
-    t.bigint "category_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"
-  end
-
-  create_table "stylings", force: :cascade do |t|
-    t.string "title", null: false
-    t.integer "season", default: 0, null: false
-    t.string "scene"
-    t.string "text"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_stylings_on_user_id"
   end
 
   create_table "tags", force: :cascade do |t|
@@ -104,11 +75,7 @@ ActiveRecord::Schema.define(version: 2020_06_22_090615) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "item_stylings", "items"
-  add_foreign_key "item_stylings", "stylings"
   add_foreign_key "item_tags", "items"
   add_foreign_key "item_tags", "tags"
-  add_foreign_key "items", "categories"
   add_foreign_key "items", "users"
-  add_foreign_key "stylings", "users"
 end

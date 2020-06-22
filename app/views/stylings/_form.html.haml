@@ -1,16 +1,16 @@
 .form
   = form_with model: @styling, local: true do |f|
     = render 'devise/shared/error_messages', model: f.object
-    
+
     .field
       .field__item-image
         = f.label :アイテムを選択してください
-        = f.search_field :item
-      
+        -# = f.collection_check_boxes :item_ids, @items, :id, :image
+
       .field__title
         = f.label :タイトルを入力してください
         = f.text_field :title
-      
+
       .field__select
         = f.label :シーズン
         = f.select :season, Item.seasons.keys.map{ |k| [k,k]}, {include_blank: "選択してください"}
@@ -22,6 +22,6 @@
       .field__text
         = f.label :メモ
         = f.text_area :text
-    
+
     .actions
       = f.submit 'Save', class: "button"

@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2020_06_20_072429) do
   create_table "stylings", force: :cascade do |t|
     t.string "title", null: false
     t.integer "season", default: 0, null: false
-    t.string "scene", null: false
+    t.string "scene"
     t.string "text"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false

@@ -5,7 +5,7 @@
     .field
       .field__item-image
         = f.label :アイテムを選択してください
-        -# = f.collection_check_boxes :item_ids, @items, :id, :image
+        = f.collection_check_boxes :item_ids, @items, :id, :image
 
       .field__title
         = f.label :タイトルを入力してください

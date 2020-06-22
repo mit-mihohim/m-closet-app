@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
 
   private
   def items_index
-    @items = current_user.items
+    @items = current_user.items.with_attached_image
   end
 end

@@ -2,8 +2,8 @@ class Item < ApplicationRecord
   belongs_to :user
   belongs_to :category
   has_one_attached :image, dependent: :destroy
-  has_many :stylings, dependent: :destroy
-  has_many :stylings, through: :item_stylings
+  has_many :item_stylings, dependent: :destroy
+  has_many :stylings, through: :item_stylings, dependent: :destroy
 
   validates :season, :color, presence: true
 

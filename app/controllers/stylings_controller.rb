@@ -1,6 +1,7 @@
 class StylingsController < ApplicationController
-  before_action :items_index, only: [:new, :edit]
+  before_action :items_index
   before_action :set_styling, only: [:show]
+
   def index
 
   end
@@ -10,6 +11,7 @@ class StylingsController < ApplicationController
 
   def new
     @styling = Styling.new
+    @styling.item_stylings.build
   end
 
   def create
@@ -40,6 +42,6 @@ class StylingsController < ApplicationController
   end
 
   def styling_params
-    params.require(:styling).permit(:title, :season, :scene, :text, item_ids: []).merge(user_id: current_user.id)
+    params.require(:styling).permit(:title, :season, :scene, :text, {item_ids: []}).merge(user_id: current_user.id)
   end
 end

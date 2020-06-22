@@ -1,6 +1,14 @@
-.add-item
-  .add-item__text
-    アイテムを追加する
-  .add-item__icon
-    = link_to new_item_path do
-      = image_tag 'plus-icon.png', size: "50x50", class: "plus-icon"
+.add-icons
+  .add-item
+    .add-item__text
+      アイテムを追加する
+    .add-item__icon
+      = link_to new_item_path do
+        = image_tag 'plus-icon.png', size: "50x50", class: "plus-icon"
+
+  .add-item
+    .add-item__text
+      スタイリングを追加する
+    .add-item__icon
+      = link_to new_styling_path do
+        = image_tag 'plus-icon.png', size: "50x50", class: "plus-icon"

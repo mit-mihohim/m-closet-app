@@ -11,7 +11,6 @@ class StylingsController < ApplicationController
 
   def new
     @styling = Styling.new
-    @styling.item_stylings.build
   end
 
   def create
@@ -42,6 +41,6 @@ class StylingsController < ApplicationController
   end
 
   def styling_params
-    params.require(:styling).permit(:title, :season, :scene, :text, {item_ids: []}).merge(user_id: current_user.id)
+    params.require(:styling).permit(:title, :season, :scene, :text, item_ids: []).merge(user_id: current_user.id)
   end
 end

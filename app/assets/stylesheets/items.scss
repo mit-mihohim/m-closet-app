@@ -32,6 +32,16 @@
   }
 
   // item-indexページ
+  .items-counts {
+    display: block;
+    background-color: #ff77d6;
+    width: 50%;
+    margin: 20px auto;
+    font-size: 80px;
+    padding: 10px;
+    border-radius: 10px;
+    color: #ffffff;
+  }
   .item-index {
     width: 75%;
     margin: 0 auto;
@@ -54,6 +64,71 @@
         &:hover {
           background-color: #414141;
           color: #ffffff;
+        }
+      }
+    }
+  }
+
+  // items-topページ
+  .top {
+    width: 90%;
+    margin: 10px auto 30px;
+    .title {
+      margin-bottom: 10px;
+      .nickname {
+        font-size: 50px;
+      }
+    }
+    .cards {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      .card {
+        width: 30%;
+        height: 300px;
+        min-width:300px;
+        border: solid 1px;
+        border-radius: 10px;
+        border-color: #e7e7e7;
+        margin-bottom: 20px;
+        cursor: pointer;
+        &:hover {
+          box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
+        }
+        &__title {
+          border-radius: 10px 10px 0 0;
+          height: 50px;
+          background-color: #ffffff;
+          padding: 5px;
+          &--all {
+            background-color: #47acff;
+            color: #ffffff;
+          }
+          &--fav {
+            background-color: #ff77d6;
+            color: #ffffff;
+          }
+          &--rest {
+            background-color: #ff3737;
+            color: #ffffff;
+          }
+        }
+        &__number {
+          font-size: 100px;
+          font-weight: bold;
+          &--all {
+            color: #47acff;
+          }
+          &--fav {
+            color: #ff90da;
+          }
+          &--rest {
+            color: #ff3737;
+          }
+        }
+        &__info {
+          padding: 8px;
+          text-align: left;
         }
       }
     }

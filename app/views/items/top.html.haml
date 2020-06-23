@@ -1,2 +1,29 @@
 .wrapper
-  %h1 topページ
+  .top
+    %h1.title
+      %span.nickname
+        #{current_user.nickname} 
+      %span のクローゼット
+    .cards
+      .card.card--rest
+        %h2.card__title.card__title--rest
+          いじけ服
+        .card__number.card__number--rest
+          #{@items.count - @favourites.count}
+        %p.card__info
+          初めまして、お久しぶりです？ お気に入りに入れず寂しそうな服たち
+      .card.card--all
+        %h2.card__title.card__title--all
+          コレクション
+        .card__number.card__number--all
+          #{@items.count}
+        %p.card__info
+          たくさんの服たちがあなたを待っています! 大好きな服やお久しぶりの服、服と向き合ってみませんか？
+      .card.card--fav
+        %h2.card__title.card__title--fav
+          お気に入り
+        .card__number.card__number--fav
+          #{@favourites.count}
+        %p.card__info
+          いつもお世話になっています。大好きな服をもっと増やして行きたいですね！きっとまだまだ、素敵な出会いがあるはず。
+      

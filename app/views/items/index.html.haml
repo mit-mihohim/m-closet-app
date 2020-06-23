@@ -1,5 +1,7 @@
 .wrapper
   %h2 アイテム一覧
+  %h2.items-counts
+    Total #{@items.count}
   .item-index
     - @items.each do |item|
       .item

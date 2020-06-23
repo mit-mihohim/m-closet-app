@@ -93,3 +93,12 @@ ancestry
 ### Association
 - belongs_to :items
 - belongs_to :tags
+
+## favouriteテーブル
+|Column| Type|Option|
+|------|-----|------|
+|item_id|references|null: false|
+|user_id|references|null: false|
+### Association
+- belongs_to :items
+- belongs_to :user

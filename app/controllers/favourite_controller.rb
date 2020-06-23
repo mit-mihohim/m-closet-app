@@ -1,2 +1,0 @@
-class FavouriteController < ApplicationController
-end

@@ -1,10 +1,13 @@
 .wrapper 
   .item-show
+    %h2 アイテム詳細
     %div
       = image_tag @item.image.variant(combine_options:{resize: "300x300", crop: "300x300", gravity: :center}).processed
-    %div
-      = @item.category.name
-      -# タグ付けに変更(検索登録しやすく)
+    %div.tags
+      - @item.tags.each do |tag|
+        .tags__tag
+          = tag.name
+      
     %div
       = @item.season
       -# ボタン選択に変更する

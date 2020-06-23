@@ -17,9 +17,13 @@
       .field__select
         = f.label :カラー
         = f.select :color, Item.colors.keys.map{ |k| [k, k]}, {include_blank: "選択してください"}
-      .field__category
-        = f.label :カテゴリー
-        = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: "選択して下さい"}, {class: "select-box", id: "category_select"}
+      .field__select
+        = f.label :タグ
+        = f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag|
+          = tag.label class: "tags-check" do
+            = tag.check_box class: "form-check-input"
+            = tag.text
+            
       .field__text
         = f.label :メモ
         = f.text_area :text

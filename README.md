@@ -52,6 +52,8 @@ ancestry
 - belongs_to :user
 - has_many :stylings, through: :item_stylings
 - has_many :item_stylings,dependent: :destroy
+- has_many :item_tags, dependent: :destroy
+- has_many :tags, through: :item_tags, dependent: :destroy
 
 ## item_stylingsテーブル
 |Column|Type|Option|
@@ -74,3 +76,20 @@ ancestry
 - belongs_to :user
 - has_many :items, through: :item_stylings
 - has_many :item_stylings
+
+## tagsテーブル
+|Column| Type|Option|
+|------|-----|------|
+|name|string|null: false, uniqueness: true|
+### Association
+- has_many :item_tags, dependent: :destroy
+- has_many :tags, through: :item_tags, dependent: :destroy
+
+## item_tagsテーブル
+|Column| Type|Option|
+|------|-----|------|
+|item_id|references|null: false|
+|tag_id|references|null: false|
+### Association
+- belongs_to :items
+- belongs_to :tags

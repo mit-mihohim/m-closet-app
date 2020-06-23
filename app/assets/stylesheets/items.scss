@@ -10,6 +10,25 @@
     width: 50%;
     margin: 0 auto;
     display: block;
+    .tags {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      &__tag {
+        margin: 5px;
+        border: 1px solid;
+        border-radius: 10px;
+        padding: 5px;
+        background-color: #ffffff;
+        font-size: 18px;
+        text-decoration: none;
+        cursor: pointer;
+        &:hover {
+          background-color: #414141;
+          color: #ffffff;
+        }
+      }
+    }
   }
 
   // item-indexページ

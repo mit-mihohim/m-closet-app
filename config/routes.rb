@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root 'items#top'
 
   resources :items do
-    resources :favourites, only: [:create, :destroy]
+    resources :favourites, only: [:index, :create, :destroy]
   end
 end

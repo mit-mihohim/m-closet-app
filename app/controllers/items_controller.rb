@@ -52,8 +52,10 @@ class ItemsController < ApplicationController
   end
 
   def top
-    @items = current_user.items
-    @favourites = Favourite.where(user_id: current_user.id)
+    if user_signed_in?
+      @items = current_user.items
+      @favourites = Favourite.where(user_id: current_user.id)
+    end
   end
 
   private

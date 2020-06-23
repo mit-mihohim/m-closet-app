@@ -4,6 +4,7 @@ class Item < ApplicationRecord
   has_many :item_tags, dependent: :destroy
   has_many :tags, through: :item_tags, dependent: :destroy
   has_many :favourites, dependent: :destroy
+  has_many :favourite, through: :favourites, source: :user
 
   validates :season, :color, presence: true
 

@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :return_to_root_path, except: :top, unless: :user_signed_in?
+  before_action :fav_new, only: [:index, :show]
 
   def index
     @items = current_user.items
@@ -60,11 +61,11 @@ class ItemsController < ApplicationController
     redirect_to root_path, alert: "ログインが必要です"
   end
 
-  def set_item
-    @item = Item.find(params[:id])
-  end
-
   def item_params
     params.require(:item).permit(:image, :season, :color, :text, tag_ids:[]).merge(user_id: current_user.id)
+  end
+
+  def fav_new
+    @fav = Favourite.new
   end
 end

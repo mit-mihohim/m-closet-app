@@ -3,6 +3,9 @@
     %h2 アイテム詳細
     %div
       = image_tag @item.image.variant(combine_options:{resize: "300x300", crop: "300x300", gravity: :center}).processed
+      #fav-btns
+        = render partial: 'favourites/favourite', locals: { item: @item}
+
     %div.tags
       - @item.tags.each do |tag|
         .tags__tag

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class FavouriteControllerTest < ActionDispatch::IntegrationTest
+class FavouritesControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

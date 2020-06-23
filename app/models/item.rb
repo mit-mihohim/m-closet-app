@@ -3,6 +3,7 @@ class Item < ApplicationRecord
   has_one_attached :image, dependent: :destroy
   has_many :item_tags, dependent: :destroy
   has_many :tags, through: :item_tags, dependent: :destroy
+  has_many :favourites, dependent: :destroy
 
   validates :season, :color, presence: true
 

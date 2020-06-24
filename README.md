@@ -1,17 +1,48 @@
 # README
-make closet in your hand
-## "m-closet"
-1. upload images of your clothes
-2. images will be automatically labeled *aiming to achieve auto-label
-3. at user's page you can check total count of items, favourite items and "Not much items"
-4. by visualizing numbers of items, telling how much waste items they have
-5. also by eye-sight all items, easy to tell the favourite type od clothes and will help gathering new items
-# production
-Heroku
-# rails version
+## アプリ名: m-closet https://m-closet-app.herokuapp.com/
+## 概要
+- 手持ちの服の写真をアップロードし、管理する事ができるアプリです。
+- 写真登録時に、タグやシーズンを入力する事によって、カテゴリ分けが可能です。
+- お気に入り登録が可能です。
+
+## テストアカウント
+こちらのアカウントを利用し、アプリケーションをご体験下さい。
+- メールアドレス: testsan@test.com
+- パスワード: 12345678 
+
+## 制作背景
+服が大好きで、つい気なったものを衝動買いしてしまったり、類似する服が何枚も手元にあったり、いつの間にかクローゼットの中はもので溢れかえってしまいました。
+本来なら、活躍するはずの服たちが、”クローゼットの住人”と化してしまう。写真をとって管理する事で、全ての服に活躍の場を与えたいと思い”m-closet"を作成しました。
+
+## 使用技術
+- 開発環境
+  - Ruby/Ruby on Rails/Haml/Scss/JavaScript/Jquery/Postgresql/Github/Visual Studio Code
+- 本番環境
+  - AWS(S3)/Heroku/Postgresq
+### rails version
 Rails 6.0.3.1
-# ruby version
+### ruby version
 ruby 2.5.1
+
+## アプリケーションキャプチャ・工夫したポイント
+- トップページ
+トップページで総数やお気に入りの数を明記する事で、活躍できている服、できていない服を数字で確認する事ができます。
+[![Image from Gyazo](https://i.gyazo.com/9c170e6684233a7425c7004ce6dfacca.png)](https://gyazo.com/9c170e6684233a7425c7004ce6dfacca)
+
+- アイテム一覧
+一覧表示でアイテムを確認する事ができ、クローゼットを開ける事なく持ち物を確認する事ができます。
+[![Image from Gyazo](https://i.gyazo.com/67716e8cbd97007826ca218031011150.jpg)](https://gyazo.com/67716e8cbd97007826ca218031011150)
+
+- お気に入り機能
+お気に入りに登録する事で、自身の好みの傾向を知る事ができます。
+[![Image from Gyazo](https://i.gyazo.com/0da4d4133ac5b8a432f6cb1d265d1a2c.gif)](https://gyazo.com/0da4d4133ac5b8a432f6cb1d265d1a2c)
+
+## 今後実装したい機能
+- スタイリング機能→アイテムを組み合わせて保存する事ができる機能
+- GoogleCloudAPIを利用した、自動タグ付け機能
+- スマートフォン対応
+- カレンダーを利用した、毎日のスタイリング登録機能
+- SNSとの連携、情報取得
 
 # DB設計
 ## ER図
@@ -28,16 +59,6 @@ devise
 ### Association
 - has_many :items, dependent: :destroy
 - has_many :stylings, dependent: :destroy
-
-## categoriesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|name|string|null: false|
-### gem指定
-ancestry
-### Association
-- has_many :items
-- has_ancestry
 
 ## itemsテーブル
 |Column|Type|Option|

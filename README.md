@@ -25,15 +25,15 @@ Rails 6.0.3.1
 ruby 2.5.1
 
 ## アプリケーションキャプチャ・工夫したポイント
-- トップページ
+### トップページ
 トップページで総数やお気に入りの数を明記する事で、活躍できている服、できていない服を数字で確認する事ができます。
 [![Image from Gyazo](https://i.gyazo.com/9c170e6684233a7425c7004ce6dfacca.png)](https://gyazo.com/9c170e6684233a7425c7004ce6dfacca)
 
-- アイテム一覧
+### アイテム一覧
 一覧表示でアイテムを確認する事ができ、クローゼットを開ける事なく持ち物を確認する事ができます。
 [![Image from Gyazo](https://i.gyazo.com/67716e8cbd97007826ca218031011150.jpg)](https://gyazo.com/67716e8cbd97007826ca218031011150)
 
-- お気に入り機能
+### お気に入り機能
 お気に入りに登録する事で、自身の好みの傾向を知る事ができます。
 [![Image from Gyazo](https://i.gyazo.com/0da4d4133ac5b8a432f6cb1d265d1a2c.gif)](https://gyazo.com/0da4d4133ac5b8a432f6cb1d265d1a2c)
 

@@ -46,7 +46,7 @@ ruby 2.5.1
 
 # DB設計
 ## ER図
-![m-closet-app ER図](https://user-images.githubusercontent.com/64117340/84738119-4435c400-afe4-11ea-8707-989cc5483479.png)
+![m-closet-app ER図 (3)](https://user-images.githubusercontent.com/64117340/85487686-06e6bd00-b608-11ea-8d89-a78073226d5c.png)
 
 ## usersテーブル
 |Column|Type|Option|

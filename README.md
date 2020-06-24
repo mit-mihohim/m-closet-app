@@ -1,5 +1,5 @@
 # README
-## アプリ名: m-closet https://m-closet-app.herokuapp.com/
+## アプリ名: [m-closet](https://m-closet-app.herokuapp.com/)
 ## 概要
 - 手持ちの服の写真をアップロードし、管理する事ができるアプリです。
 - 写真登録時に、タグやシーズンを入力する事によって、カテゴリ分けが可能です。

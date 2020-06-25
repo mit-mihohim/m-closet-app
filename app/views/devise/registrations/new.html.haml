@@ -6,22 +6,18 @@
         = render "devise/shared/error_messages", resource: resource
         .field
           = f.label :nickname
-          %br/
           = f.text_field :nickname, autofocus: true, placeholder: "ニックネーム", autocomplete: "nickname"
         .field
           = f.label :email
-          %br/
           = f.email_field :email, autofocus: true, placeholder: "example@mail.com", autocomplete: "email"
         .field
           = f.label :password
           - if @minimum_password_length
             %em
               (#{@minimum_password_length} 文字以上で入力して下さい)
-          %br/
           = f.password_field :password, placeholder: "8文字以上", autocomplete: "new-password"
         .field
           = f.label :password_confirmation
-          %br/
           = f.password_field :password_confirmation,placeholder: "確認の為、もう一度入力して下さい", autocomplete: "new-password"
         .actions
           = f.submit "サインイン", class: "button"

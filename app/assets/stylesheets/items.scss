@@ -16,7 +16,7 @@
       justify-content: center;
       flex-wrap: wrap;
       &__tag {
-        @include button(100%);
+        @include buttons(100%);
         margin-right: 5px;
       }
     }
@@ -45,7 +45,7 @@
       height: 200px;
       margin: 7px;
       .link-btn {
-        @include button(20px);
+        @include buttons(20px);
         line-height: 20px;
         border-radius: 0;
         border: 0;

@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   before_action :fav_new, only: [:index, :show]
 
   def index
-    @items = current_user.items
+    @items = current_user.items.with_attached_image
   end
 
   def show

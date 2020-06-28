@@ -15,7 +15,18 @@
       justify-content: center;
       flex-wrap: wrap;
       &__tag {
-        @include button(100%)
+        margin: 5px;
+        border: 1px solid;
+        border-radius: 10px;
+        padding: 5px;
+        background-color: #ffffff;
+        font-size: 18px;
+        text-decoration: none;
+        cursor: pointer;
+        &:hover {
+          background-color: #414141;
+          color: #ffffff;
+        }
       }
     }
   }
@@ -23,33 +34,37 @@
   // item-indexページ
   .items-counts {
     display: block;
-    background-color: $primary-blue;
+    background-color: #ff77d6;
     width: 50%;
     margin: 20px auto;
     font-size: 80px;
     padding: 10px;
     border-radius: 10px;
-    color: $main-white;
+    color: #ffffff;
   }
   .item-index {
     width: 75%;
     margin: 0 auto;
     flex-wrap: wrap;
     display: flex;
-    justify-content: flex-start;
     .item {
       position: relative;
       width: 200px;
       height: 200px;
       margin: 7px;
       .link-btn {
-        @include button(20px);
-        border-radius: 0;
-        border: 0;
+        padding: 5px;
+        background-color: #ffffff;
         font-size: 20px;
+        text-decoration: none;
         position: absolute;
         left: 0;
         bottom: 0;
+        cursor: pointer;
+        &:hover {
+          background-color: #414141;
+          color: #ffffff;
+        }
       }
     }
   }
@@ -83,29 +98,32 @@
         &__title {
           border-radius: 10px 10px 0 0;
           height: 50px;
-          background-color: $main-white;
+          background-color: #ffffff;
           padding: 5px;
           &--all {
-            @include card($primary-blue);
+            background-color: #47acff;
+            color: #ffffff;
           }
           &--fav {
-            @include card($fav-pink);
+            background-color: #ff77d6;
+            color: #ffffff;
           }
           &--rest {
-            @include card($alart-color);
+            background-color: #ff3737;
+            color: #ffffff;
           }
         }
         &__number {
           font-size: 100px;
           font-weight: bold;
           &--all {
-            color: $primary-blue;
+            color: #47acff;
           }
           &--fav {
-            color: $fav-pink;
+            color: #ff90da;
           }
           &--rest {
-            color: $alart-color;
+            color: #ff3737;
           }
         }
         &__info {

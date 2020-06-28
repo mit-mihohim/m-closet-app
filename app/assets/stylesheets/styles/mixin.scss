@@ -10,8 +10,7 @@
 }
 
 @mixin button($height) {
-  line-height: $height;
-  text-align: center;
+  height: $height;
   padding: 5px;
   border: 1px solid;
   border-color: $main-black;
@@ -25,9 +24,4 @@
     background-color: $main-black;
     color: $main-white;
   }
-}
-
-@mixin card($background-color) {
-  background-color: $background-color;
-  color: $main-white;
 }

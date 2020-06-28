@@ -1,9 +1,13 @@
 .notification {
   .notice {
-    @include notification(#00ffff);
+    background-color: #00ffff;
+    color: #ffffff;
+    text-align: center;
   }
 
   .alert {
-    @include notification(#ff6f2c);
+    background-color: #ff6f2c;
+    color: #ffffff;
+    text-align: center;
   }
 }

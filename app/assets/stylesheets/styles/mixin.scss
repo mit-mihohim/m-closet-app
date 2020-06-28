@@ -1,0 +1,27 @@
+@mixin notification($background-color) {
+  background-color: $background-color;
+  color: $main-white;
+  text-align: center;
+}
+
+@mixin font-bold($font-size) {
+  font-size: $font-size;
+  font-weight: bold;
+}
+
+@mixin button($height) {
+  height: $height;
+  padding: 5px;
+  border: 1px solid;
+  border-color: $main-black;
+  color: $main-black;
+  text-decoration: none;
+  background-color: $main-white;
+  border-radius: 5px;
+  transition: .3s;
+  cursor: pointer;
+  &:hover {
+    background-color: $main-black;
+    color: $main-white;
+  }
+}

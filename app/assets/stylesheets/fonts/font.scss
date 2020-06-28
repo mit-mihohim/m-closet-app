@@ -1,6 +1,6 @@
 * {
   font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
-  color: #414141;
+  color: $main-black;
   // comment
   p {
     font-size: 12px;
@@ -11,12 +11,10 @@
   }
   // subtitle
   h2 {
-    font-size: 30px;
-    font-weight: bold;
+    @include font-bold(30px);
   }
   // main-title
   h1 {
-    font-size: 45px;
-    font-weight: bold;
+    @include font-bold(45px);
   }
 }

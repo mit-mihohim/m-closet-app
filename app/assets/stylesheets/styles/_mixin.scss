@@ -10,7 +10,7 @@
 }
 
 @mixin button($height) {
-  line-height: $height;
+  height: $height;
   text-align: center;
   padding: 5px;
   border: 1px solid;

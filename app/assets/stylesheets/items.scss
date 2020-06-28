@@ -1,6 +1,7 @@
 .wrapper {
   text-align: center;
   width: 100vw;
+  padding-bottom: 30px;
   h1 {
     line-height: 70px;
   }
@@ -15,7 +16,8 @@
       justify-content: center;
       flex-wrap: wrap;
       &__tag {
-        @include button(100%)
+        @include button(100%);
+        margin-right: 5px;
       }
     }
   }
@@ -44,6 +46,7 @@
       margin: 7px;
       .link-btn {
         @include button(20px);
+        line-height: 20px;
         border-radius: 0;
         border: 0;
         font-size: 20px;

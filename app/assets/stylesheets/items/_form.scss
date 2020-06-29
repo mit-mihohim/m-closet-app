@@ -45,7 +45,7 @@
   }
   .actions {
     .button {
-      @include buttons(38px);
+      @include btn(38px);
     }
   }
 }

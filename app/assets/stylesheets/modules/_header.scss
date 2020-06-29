@@ -37,7 +37,7 @@
         li {
           margin: 0 8px 0 8px;
           .link-btn {
-            @include buttons(34px);
+            @include btn(34px);
           }
         }
       }
@@ -52,7 +52,7 @@
           padding: 0 5px;
         }
         .button {
-          @include buttons(34px);
+          @include btn(34px);
         }
       }
       &__user-menu {

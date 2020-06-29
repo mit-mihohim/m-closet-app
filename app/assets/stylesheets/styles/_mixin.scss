@@ -9,7 +9,7 @@
   font-weight: bold;
 }
 
-@mixin buttons($height) {
+@mixin btn($height) {
   height: $height;
   text-align: center;
   padding: 5px;

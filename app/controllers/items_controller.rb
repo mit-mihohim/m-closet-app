@@ -45,6 +45,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
+    @item.image.purge
     respond_to do |format|
       format.html { redirect_to items_url, notice: 'アイテムが削除されました' }
       format.json { head :no_content }

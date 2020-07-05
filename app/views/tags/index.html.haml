@@ -1,0 +1,4 @@
+%div.tags
+  - @tags.each do |tag|
+    .tags__tag
+      = link_to "#{tag.name}", root_path

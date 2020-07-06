@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :items do
     resources :favourites, only: [:index, :create, :destroy]
   end
-  resources :tags, only: [:index, :create]
+  resources :tags, only: :index
 end

@@ -19,10 +19,7 @@
         = f.select :color, Item.colors.keys.map{ |k| [k, k]}, {include_blank: "選択してください"}
       .field__select
         = f.label :タグ
-        = f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag|
-          = tag.label class: "tags-check" do
-            = tag.check_box class: "form-check-input"
-            = tag.text
+        = f.text_field :tag_list, value: @item.tag_list.join(","), class: "select__tags"
             
       .field__text
         = f.label :メモ

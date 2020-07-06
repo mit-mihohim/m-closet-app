@@ -36,6 +36,23 @@ ActiveRecord::Schema.define(version: 2020_07_06_053241) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "favourites", force: :cascade do |t|
+    t.bigint "item_id", null: false
+    t.bigint "user_id", null: false
+    t.index ["item_id"], name: "index_favourites_on_item_id"
+    t.index ["user_id"], name: "index_favourites_on_user_id"
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.integer "season", default: 0, null: false
+    t.integer "color", default: 0, null: false
+    t.string "text"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_items_on_user_id"
+  end
+
   create_table "taggings", id: :serial, force: :cascade do |t|
     t.integer "tag_id"
     t.string "taggable_type"
@@ -77,5 +94,8 @@ ActiveRecord::Schema.define(version: 2020_07_06_053241) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "favourites", "items"
+  add_foreign_key "favourites", "users"
+  add_foreign_key "items", "users"
   add_foreign_key "taggings", "tags"
 end

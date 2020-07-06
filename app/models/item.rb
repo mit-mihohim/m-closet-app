@@ -2,7 +2,6 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one_attached :image, dependent: :destroy
   acts_as_taggable_on :tags
-  acts_as_taggable_on :categories, :features
   has_many :favourites, dependent: :destroy
   has_many :favourite, through: :favourites, source: :user
 

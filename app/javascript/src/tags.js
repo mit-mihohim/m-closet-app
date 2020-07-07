@@ -8,5 +8,16 @@ $(function() {
       data: {keyword: input},
       dataType: "json"
     })
+    .done(function(tags) {
+      if (tags.length !== 0) {
+        tags.forEach(function(tag) {
+          addTag(tag);
+        });
+      } else {
+        addCreateTag();
+      }
+    })
+    .fail(function() {
+    })
   });
 });

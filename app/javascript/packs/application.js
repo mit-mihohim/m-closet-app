@@ -7,6 +7,7 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 require("jquery")
+require("easy-autocomplete")
 import "stylesheets/application.scss"
 import "layouts/up-btn.js";
 import "src/tags.js"

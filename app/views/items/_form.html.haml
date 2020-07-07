@@ -19,16 +19,15 @@
         = f.select :color, Item.colors.keys.map{ |k| [k, k]}, {include_blank: "選択してください"}
       .field__tag
         = f.label :タグ
-        .selected-tags
-          #item-tags.js-add-tags
-        = f.text_field :tag_list, value: @item.tag_list.join(","), class: "tags-field", placeholder: "1つ以上、複数の場合は','で区切ってください"
+        .tags-field
+          = f.text_field :tag_list, value: @item.tag_list.join(","), class: "tags-field-input", placeholder: "1つ以上、複数の場合は','で区切ってください"
         #tags-search-result
-        .most-used-tags
-          %label よく使われるタグ
-          .tags
-            - @popular_tags.each do |tag|
-              .tags_btn
-                = tag.name
+        -# .most-used-tags
+        -#   %label よく使われるタグ
+        -#   .tags
+        -#     - @popular_tags.each do |tag|
+        -#       .tags_btn
+        -#         = tag.name
       .field__text
         = f.label :メモ
         = f.text_area :text

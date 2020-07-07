@@ -1,6 +1,7 @@
 class TagsController < ApplicationController
   def index
-    @tags = ActsAsTaggableOn::Tag.all
+    @tags_all = ActsAsTaggableOn::Tag.all
+    @tags = ActsAsTaggableOn::Tag.named_like(params[:keyword])
     respond_to do |format|
       format.html
       format.json

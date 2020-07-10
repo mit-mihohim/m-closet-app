@@ -12,6 +12,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @tags = ActsAsTaggableOn::Tag.all
     @popular_tags = ActsAsTaggableOn::Tag.most_used(6)
   end
 

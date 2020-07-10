@@ -19,30 +19,12 @@
         = f.select :color, Item.colors.keys.map{ |k| [k, k]}, {include_blank: "選択してください"}
       .field__tag
         = f.label :タグを追加
-        = f.text_field :tag_list, value: @item.tag_list.join(","), data: {role: "tagsinput"} class: "tags-field-input", placeholder: "1つ以上、複数の場合は','で区切ってください"
-        .tags-field
-          -# 既存タグの検索
-          %input#tags-search-field.tags-field__input{type: "text", placeholder: "タグ名を入力して下さい"}
-          #tags-search-result
-          -# .tags-field__most-used
-          -#   %label よく使われるタグ
-          -#   .tags
-          -#     - @popular_tags.each do |tag|
-          -#       .tags_btn
-          -#         = tag.name
-          
-        #js-add-tags.tags-selected
-          - @item.tag_list.each do |tag|
-            %input{name: "item[tag_list][]", type: "hidden", value: tag.id}
-            %p.tags-field__name
+        = f.text_field :tag_list, {value: @item.tag_list.join(","), class: "flexdatalist", multiple: "multiple", data_min_length: 1, list: "languages", placeholder: "1つ以上、複数の場合は','で区切って下さい"}
+        %datalist#languages
+          - @tags.each do |tag|
+            %option{value: tag}
               = tag.name
-            %a.tag-search-remove.tags-field__btn.tags-field__btn--remove.js-remove-btn
-              Delete
-          -# 選択したタグを表示させる
-          -# = f.label :選択タグ
-          -# = f.hidden_field :tag_list, {value: @item.tag_list.join(","), class: "tags-field-input", placeholder: "1つ以上、複数の場合は','で区切ってください"}
-          
-          
+
       .field__text
         = f.label :メモ
         = f.text_area :text

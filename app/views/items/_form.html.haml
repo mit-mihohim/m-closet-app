@@ -19,11 +19,7 @@
         = f.select :color, Item.colors.keys.map{ |k| [k, k]}, {include_blank: "選択してください"}
       .field__tag
         = f.label :タグを追加
-        = f.text_field :tag_list, {value: @item.tag_list.join(","), class: "flexdatalist", multiple: "multiple", data_min_length: 1, list: "languages", placeholder: "1つ以上、複数の場合は','で区切って下さい"}
-        %datalist#languages
-          - @tags.each do |tag|
-            %option{value: tag}
-              = tag.name
+        = f.text_field :tag_list, value: @item.tag_list.join(" "), class: "tags-field", placeholder: "1つ以上入力してください"
 
       .field__text
         = f.label :メモ

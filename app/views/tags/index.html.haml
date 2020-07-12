@@ -3,9 +3,9 @@
     %h2 よく使うタグ
     .tags__list--popular
       - @popular_tags.each do |tag|
-        = link_to tag.name, item_path(tag_name: tag), class: "tags__list__tag"
+        = link_to tag.name, items_path(tag_name: tag.name), class: "tags__list__tag"
 
     %h2 タグ一覧
     .tags__list
       - @tags_all.each do |tag|
-        = link_to tag.name, items_path(tag_name: tag), class: "tags__list__tag"
+        = link_to tag.name, items_path(tag_name: tag.name), class: "tags__list__tag"

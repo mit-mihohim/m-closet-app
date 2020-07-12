@@ -11,19 +11,17 @@
       .field__image
         = f.label :写真を追加してください
         = f.file_field :image
-      .field__select
+      .field__season
         = f.label :シーズン
         = f.select :season, Item.seasons.keys.map{ |k| [k,k]}, {include_blank: "選択してください"}
-      .field__select
+      .field__color
         = f.label :カラー
         = f.select :color, Item.colors.keys.map{ |k| [k, k]}, {include_blank: "選択してください"}
-      .field__select
-        = f.label :タグ
-        = f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag|
-          = tag.label class: "tags-check" do
-            = tag.check_box class: "form-check-input"
-            = tag.text
-            
+      .field__tag
+        = f.label :タグを追加
+        %p 複数の場合は、半角スペースで区切って下さい
+        = f.text_field :tag_list, value: @item.tag_list.join(" "), class: "tags-field", placeholder: "1つ以上入力してください"
+
       .field__text
         = f.label :メモ
         = f.text_area :text

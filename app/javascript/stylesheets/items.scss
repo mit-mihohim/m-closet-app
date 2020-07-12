@@ -95,7 +95,7 @@
             @include card($fav-pink);
           }
           &--rest {
-            @include card($alart-color);
+            @include card($alert-color);
           }
         }
         &__number {
@@ -108,7 +108,7 @@
             color: $fav-pink;
           }
           &--rest {
-            color: $alart-color;
+            color: $alert-color;
           }
         }
         &__info {

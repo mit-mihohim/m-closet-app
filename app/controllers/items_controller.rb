@@ -4,7 +4,10 @@ class ItemsController < ApplicationController
   before_action :fav_new, only: [:index, :show]
 
   def index
-    @items = current_user.items.with_attached_image
+    @items = current_user.items.with_attached_image.includes([:image_attachment])
+    if params[:tag_name]
+      @items = @items.tagged_with(params[:tag_name])
+    end
   end
 
   def show
@@ -12,6 +15,8 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @tags = ActsAsTaggableOn::Tag.all
+    @popular_tags = ActsAsTaggableOn::Tag.most_used(6)
   end
 
   def edit
@@ -66,7 +71,7 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:image, :season, :color, :text, tag_ids:[]).merge(user_id: current_user.id)
+    params.require(:item).permit(:image, :season, :color, :text, :tag_list).merge(user_id: current_user.id)
   end
 
   def fav_new

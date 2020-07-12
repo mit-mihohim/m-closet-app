@@ -60,6 +60,6 @@ gem "haml-rails"
 gem 'devise'
 gem 'devise-i18n-views'
 gem "rails-i18n"
-gem "ancestry"
+gem 'acts-as-taggable-on', '6.5.0'
 gem "aws-sdk-s3", require: false
 gem "mini_magick"

@@ -1,0 +1,5 @@
+.wrapper
+  .tags
+    .tags__list
+      - @tags_all.each do |tag|
+        = link_to tag.name, "#", class: "link-btn"

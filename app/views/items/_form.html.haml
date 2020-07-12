@@ -19,6 +19,7 @@
         = f.select :color, Item.colors.keys.map{ |k| [k, k]}, {include_blank: "選択してください"}
       .field__tag
         = f.label :タグを追加
+        %p 複数の場合は、半角スペースで区切って下さい
         = f.text_field :tag_list, value: @item.tag_list.join(" "), class: "tags-field", placeholder: "1つ以上入力してください"
 
       .field__text

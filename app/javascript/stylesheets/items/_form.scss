@@ -37,6 +37,11 @@
       margin-bottom: 8px;
     }
     &__tag{
+      p {
+        font-size: 13px;
+        color: $alert-color;
+        margin-bottom: 3px;
+      }
       .tags-field {
         width: 100%;
         max-width: 380px;

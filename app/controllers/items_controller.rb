@@ -4,7 +4,10 @@ class ItemsController < ApplicationController
   before_action :fav_new, only: [:index, :show]
 
   def index
-    @items = current_user.items.with_attached_image
+    @items = current_user.items.with_attached_image.includes([:image_attachment])
+    if params[:tag_name]
+      @items = @items.tagged_with(params[:tag_name])
+    end
   end
 
   def show

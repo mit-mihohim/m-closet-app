@@ -9,7 +9,7 @@
         %li.items__all
           = link_to "ALL Items", items_path, class: "link-btn"
         %li.items__category
-          = link_to "Category", "#", class: "link-btn"
+          = link_to "Tags", tags_path, class: "link-btn"
       .nav-bar__search-box
         = form_with(url: "#", local: true, method: :get, class: "") do |f|
           = f.text_field :keyword, placeholder: "アイテムを探す", class: "input-box"

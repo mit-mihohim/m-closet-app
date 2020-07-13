@@ -1,9 +1,5 @@
 class FavouritesController < ApplicationController
-  before_action :fav_item, only: [:index, :create, :destroy]
-
-  def index
-    @favourite = Favourite.where(user_id: current_user.id)
-  end
+  before_action :fav_item, only: [:create, :destroy]
 
   def create
     @favourite = Favourite.new(

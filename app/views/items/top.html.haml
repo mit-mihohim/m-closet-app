@@ -7,7 +7,7 @@
         %span のクローゼット
       .cards
         .card.card--rest
-          = link_to "#" do
+          = link_to unfavourites_items_path do
             %h2.card__title.card__title--rest
               いじけ服
             .card__number.card__number--rest
@@ -23,7 +23,7 @@
             %p.card__info
               たくさんの服たちがあなたを待っています! 大好きな服やお久しぶりの服、服と向き合ってみませんか？
         .card.card--fav
-          = link_to "#" do
+          = link_to favourites_items_path do
             %h2.card__title.card__title--fav
               お気に入り
             .card__number.card__number--fav

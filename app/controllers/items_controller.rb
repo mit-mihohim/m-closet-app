@@ -2,12 +2,23 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :return_to_root_path, except: :top, unless: :user_signed_in?
   before_action :fav_new, only: [:index, :show]
+  before_action :items_all, only: [:index, :unfavourites]
+  before_action :fav_items, only: [:favourites, :unfavourites]
 
   def index
-    @items = current_user.items.with_attached_image.includes([:image_attachment])
     if params[:tag_name]
       @items = @items.tagged_with(params[:tag_name])
+      @tag = params[:tag_name]
     end
+  end
+
+  def favourites
+    render template: "items/index"
+  end
+
+  def unfavourites
+    @items = @items - @fav
+    render template: "items/index"
   end
 
   def show
@@ -76,5 +87,13 @@ class ItemsController < ApplicationController
 
   def fav_new
     @fav = Favourite.new
+  end
+
+  def items_all
+    @items = current_user.items.with_attached_image.includes([:image_attachment])
+  end
+
+  def fav_items
+    @fav = current_user.items.with_attached_image.includes([:image_attachment]).joins(:favourites).where(favourites: {user_id: current_user})
   end
 end

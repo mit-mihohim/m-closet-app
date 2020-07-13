@@ -23,40 +23,42 @@
   }
 
   // item-indexページ
-  .items-counts {
-    display: block;
-    background-color: $primary-blue;
-    width: 50%;
-    margin: 20px auto;
-    font-size: 80px;
-    padding: 10px;
-    border-radius: 10px;
-    color: $main-white;
-  }
-  .item-index {
-    width: 75%;
-    margin: 0 auto;
-    flex-wrap: wrap;
-    display: flex;
-    justify-content: flex-start;
-    .item {
-      position: relative;
-      width: 200px;
-      height: 200px;
-      margin: 7px;
-      .link-btn {
-        @include btn(20px);
-        line-height: 20px;
-        border-radius: 0;
-        border: 0;
-        font-size: 20px;
-        position: absolute;
-        left: 0;
-        bottom: 0;
+  .items {
+    .items-counts {
+      display: block;
+      background-color: $primary-blue;
+      width: 50%;
+      margin: 20px auto;
+      font-size: 80px;
+      padding: 10px;
+      border-radius: 10px;
+      color: $main-white;
+    }
+    .item-index {
+      width: 75%;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      display: flex;
+      justify-content: flex-start;
+      .item {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 7px;
+        .link-btn {
+          @include btn(20px);
+          line-height: 20px;
+          border-radius: 0;
+          border: 0;
+          font-size: 20px;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+        }
       }
     }
   }
-
+  
   // items-topページ
   .top {
     width: 90%;

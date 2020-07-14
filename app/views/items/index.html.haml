@@ -2,7 +2,11 @@
   .items
     - if @tag.present?
       %h2 #{@tag}一覧
-    - else
+    - elsif @unfav.present?
+      %h2 いじけ服一覧
+    - elsif @items.present?
       %h2 アイテム一覧
+    - else
+      %h2 お気に入り一覧
     
-    = render 'items', items: @items || @fav
+    = render 'items', items: @unfav || @items || @fav

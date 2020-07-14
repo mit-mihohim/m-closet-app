@@ -12,15 +12,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  def favourites
-    render template: "items/index"
-  end
-
-  def unfavourites
-    @items = @items - @fav
-    render template: "items/index"
-  end
-
   def show
   end
 
@@ -75,6 +66,24 @@ class ItemsController < ApplicationController
     end
   end
 
+  def favourites
+    if @fav.present?
+      render template: "items/index"
+    else
+      redirect_to items_path, alert: "お気に入りがありません。お気に入りを見つけよう！"
+    end
+  end
+
+  def unfavourites
+    @unfav = @items - @fav
+    if @unfav.present?
+      render template: "items/index"
+    else
+      render :index, notice: "いじけ服はありません！みんな大活躍！！"
+    end
+  end
+
+
   private
 
   def return_to_root_path
@@ -94,6 +103,6 @@ class ItemsController < ApplicationController
   end
 
   def fav_items
-    @fav = current_user.items.with_attached_image.includes([:image_attachment]).joins(:favourites).where(favourites: {user_id: current_user})
+    @fav = current_user.items.joins(:favourites)
   end
 end

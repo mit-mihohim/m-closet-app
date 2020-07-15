@@ -8,8 +8,7 @@
 
     %div.tags
       - @item.tags.each do |tag|
-        .tags__tag
-          = tag.name
+        = link_to tag.name, items_path(tag_name: tag.name), class: "tags__tag"
       
     %div
       = @item.season

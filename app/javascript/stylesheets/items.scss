@@ -17,7 +17,7 @@
       flex-wrap: wrap;
       &__tag {
         @include btn(100%);
-        margin-right: 5px;
+        margin: 5px;
       }
     }
   }

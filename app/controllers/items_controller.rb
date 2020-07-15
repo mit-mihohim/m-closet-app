@@ -2,10 +2,9 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :return_to_root_path, except: :top, unless: :user_signed_in?
   before_action :fav_new, only: [:index, :show]
-  before_action :items_all, only: [:index, :unfavourites]
-  before_action :fav_items, only: [:favourites, :unfavourites]
 
   def index
+    @items = current_user.items.with_attached_image.includes([:image_attachment])
     if params[:tag_name]
       @items = @items.tagged_with(params[:tag_name])
       @tag = params[:tag_name]
@@ -62,11 +61,13 @@ class ItemsController < ApplicationController
   def top
     if user_signed_in?
       @items = current_user.items
-      @favourites = Favourite.where(user_id: current_user.id)
+      @fav = current_user.favourites
+      @unfav = current_user.items.left_joins(:favourites).where(favourites: {id: nil})
     end
   end
 
   def favourites
+    @fav = current_user.items.joins(:favourites).with_attached_image.includes([:image_attachment])
     if @fav.present?
       render template: "items/index"
     else
@@ -75,7 +76,7 @@ class ItemsController < ApplicationController
   end
 
   def unfavourites
-    @unfav = @items - @fav
+    @unfav = current_user.items.left_joins(:favourites).where(favourites: {id: nil}).with_attached_image.includes([:image_attachment])
     if @unfav.present?
       render template: "items/index"
     else
@@ -96,13 +97,5 @@ class ItemsController < ApplicationController
 
   def fav_new
     @fav = Favourite.new
-  end
-
-  def items_all
-    @items = current_user.items.with_attached_image.includes([:image_attachment])
-  end
-
-  def fav_items
-    @fav = current_user.items.joins(:favourites)
   end
 end

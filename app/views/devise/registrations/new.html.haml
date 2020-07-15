@@ -13,8 +13,7 @@
         .field
           = f.label :password
           - if @minimum_password_length
-            %em
-              (#{@minimum_password_length} 文字以上で入力して下さい)
+            %p (#{@minimum_password_length} 文字以上で入力して下さい)
           = f.password_field :password, placeholder: "8文字以上", autocomplete: "new-password"
         .field
           = f.label :password_confirmation

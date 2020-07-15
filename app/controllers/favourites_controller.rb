@@ -16,6 +16,9 @@ class FavouritesController < ApplicationController
     )
     @favourite.destroy
   end
+
+  private
+  
   def fav_item
     @item = Item.find(params[:item_id])
   end

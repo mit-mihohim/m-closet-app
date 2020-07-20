@@ -17,46 +17,48 @@
       flex-wrap: wrap;
       &__tag {
         @include btn(100%);
-        margin-right: 5px;
+        margin: 5px;
       }
     }
   }
 
   // item-indexページ
-  .items-counts {
-    display: block;
-    background-color: $primary-blue;
-    width: 50%;
-    margin: 20px auto;
-    font-size: 80px;
-    padding: 10px;
-    border-radius: 10px;
-    color: $main-white;
-  }
-  .item-index {
-    width: 75%;
-    margin: 0 auto;
-    flex-wrap: wrap;
-    display: flex;
-    justify-content: flex-start;
-    .item {
-      position: relative;
-      width: 200px;
-      height: 200px;
-      margin: 7px;
-      .link-btn {
-        @include btn(20px);
-        line-height: 20px;
-        border-radius: 0;
-        border: 0;
-        font-size: 20px;
-        position: absolute;
-        left: 0;
-        bottom: 0;
+  .items {
+    .items-counts {
+      display: block;
+      background-color: $primary-blue;
+      width: 50%;
+      margin: 20px auto;
+      font-size: 80px;
+      padding: 10px;
+      border-radius: 10px;
+      color: $main-white;
+    }
+    .item-index {
+      width: 75%;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      display: flex;
+      justify-content: flex-start;
+      .item {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 7px;
+        .link-btn {
+          @include btn(20px);
+          line-height: 20px;
+          border-radius: 0;
+          border: 0;
+          font-size: 20px;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+        }
       }
     }
   }
-
+  
   // items-topページ
   .top {
     width: 90%;
@@ -72,6 +74,7 @@
       justify-content: space-evenly;
       flex-wrap: wrap;
       .card {
+        text-decoration: none;
         width: 30%;
         height: 300px;
         min-width:300px;
@@ -80,6 +83,9 @@
         border-color: #e7e7e7;
         margin-bottom: 20px;
         cursor: pointer;
+        a {
+          text-decoration: none;
+        }
         &:hover {
           box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
         }

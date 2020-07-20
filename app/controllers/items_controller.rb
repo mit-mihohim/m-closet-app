@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
     @items = current_user.items.with_attached_image.includes([:image_attachment])
     if params[:tag_name]
       @items = @items.tagged_with(params[:tag_name])
+      @tag = params[:tag_name]
     end
   end
 
@@ -60,9 +61,29 @@ class ItemsController < ApplicationController
   def top
     if user_signed_in?
       @items = current_user.items
-      @favourites = Favourite.where(user_id: current_user.id)
+      @fav = current_user.favourites
+      @unfav = current_user.items.left_joins(:favourites).where(favourites: {id: nil})
     end
   end
+
+  def favourites
+    @fav = current_user.items.joins(:favourites).with_attached_image.includes([:image_attachment])
+    if @fav.present?
+      render template: "items/index"
+    else
+      redirect_to items_path, alert: "お気に入りがありません。お気に入りを見つけよう！"
+    end
+  end
+
+  def unfavourites
+    @unfav = current_user.items.left_joins(:favourites).where(favourites: {id: nil}).with_attached_image.includes([:image_attachment])
+    if @unfav.present?
+      render template: "items/index"
+    else
+      render :index, notice: "いじけ服はありません！みんな大活躍！！"
+    end
+  end
+
 
   private
 

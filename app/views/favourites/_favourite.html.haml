@@ -1,5 +1,5 @@
 - if Favourite.find_by(user_id: current_user.id, item_id: item.id)
-  = link_to(item_favourite_path(@item, item.id), method: :delete, remote: true) do
+  = link_to(item_favourites_path(@item, item.id), method: :delete, remote: true) do
     .fav-btns__fav
       = image_tag "red-heart.png", size: "50x50", class: "heart-icon"
 
